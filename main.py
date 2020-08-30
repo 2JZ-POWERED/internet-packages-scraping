@@ -11,8 +11,7 @@ URL = 'https://irancell.ir/en/o/1001/online-purchase-of-internet-packages'
 def scrape(url):
     r = requests.get(url)
     soup = BeautifulSoup(r.text, 'html.parser')
-    elems = soup.find_all('div',
-                          attrs={'class': 'col-md-6 col-xl-4 js-product'})
+    elems = soup.find_all('div', attrs={'class': 'col-md-6 col-xl-4 js-product'})
     packs = []
     for e in elems:
         try:
